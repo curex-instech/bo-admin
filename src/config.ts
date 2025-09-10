@@ -4,7 +4,7 @@ import { API_SERVER } from './environment';
 
 
 const siteConfig: SiteConfig = {
-  siteName: 'Internal Portal',
+  siteName: 'BO Web Admin',
   strictMode: false,
   /** You can have custom top and side navs through widgets */
   // topNavWidgetId: 'widget-customized-topnav',
