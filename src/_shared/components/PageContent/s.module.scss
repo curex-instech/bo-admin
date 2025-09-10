@@ -1,0 +1,27 @@
+.page {
+  min-height: 100%;
+  margin: var(--gutter-size, 24px); // defaults to 24
+  &.s16 {
+    --gutter-size: 16px;
+  }
+  &.s24 {
+    --gutter-size: 24px;
+  }
+  &.fluid {
+    background: transparent;
+  }
+}
+
+.content {
+  margin: var(--gutter-size) 0 calc(var(--gutter-size) / 2);
+  background: white;
+  &:first-of-type {
+    margin-top: 16px;
+  }
+
+  &.card {
+    padding: var(--spacing-base);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+  }
+}

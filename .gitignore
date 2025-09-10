@@ -1,0 +1,34 @@
+# config
+.vscode/
+.DS_Store
+.idea
+
+# env
+node_modules
+.env
+
+# log
+*.log
+nohup.out
+
+# generated
+/dist
+/profiling
+*.scss.d.ts
+/src/entry.tsx
+coverage
+
+# archives
+src/_archives
+mock/_archives
+
+# personal
+todo
+.cli-track
+
+# testing
+/coverage
+/.nyc_output
+/test-results/
+/playwright-report/
+/playwright/.cache/
