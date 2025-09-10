@@ -1,7 +1,6 @@
-import { SiteConfig } from '@mymind/banh-mi';
+import type { SiteConfig } from '@mymind/banh-mi';
 
 import { API_SERVER } from './environment';
-
 
 const siteConfig: SiteConfig = {
   siteName: 'BO Web Admin',

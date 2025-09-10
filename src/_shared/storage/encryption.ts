@@ -11,7 +11,7 @@ export const encryptData = (data: any) => {
   try {
     const ciphertext = CryptoJS.AES.encrypt(
       JSON.stringify(data),
-      LOCAL_STORAGE_SECRET_KEY
+      LOCAL_STORAGE_SECRET_KEY,
     ).toString();
     return ciphertext;
   } catch (e) {
@@ -40,7 +40,7 @@ export const encryptKey = (data: any) => {
         iv: IV,
         mode: CryptoJS.mode.CBC,
         padding: CryptoJS.pad.Pkcs7,
-      }
+      },
     ).toString();
     return ciphertext;
   } catch (e) {
