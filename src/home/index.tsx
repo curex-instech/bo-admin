@@ -1,7 +1,6 @@
-import * as React from 'react';
-import { FluidPage, CardContent } from '../_shared/components/PageContent';
-import { ENV, LOCALE, PUBLIC_PATH } from '../environment';
 import { useSiderCollapseState, useUser } from '@mymind/banh-mi';
+import { CardContent, FluidPage } from '../_shared/components/PageContent';
+import { ENV, LOCALE, PUBLIC_PATH } from '../environment';
 import styles from './styles.module.scss';
 
 const PageHome = (): JSX.Element => {

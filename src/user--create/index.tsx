@@ -1,6 +1,5 @@
-import * as React from 'react';
-import { FluidPage, FluidContent } from '../_shared/components/PageContent';
 import { useRoute } from '@mymind/banh-mi';
+import { FluidContent, FluidPage } from '../_shared/components/PageContent';
 
 const PageHome = (): JSX.Element => {
   const { routeParams } = useRoute();

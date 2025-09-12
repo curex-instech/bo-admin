@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { FluidPage, FluidContent } from '../_shared/components/PageContent';
+import { FluidContent, FluidPage } from '../_shared/components/PageContent';
 
 const PageHome = (): JSX.Element => {
   return (
