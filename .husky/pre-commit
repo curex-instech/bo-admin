@@ -6,7 +6,6 @@ echo "Running biome format, lint, and fix..."
 # Run biome commands on src directory
 npx biome format --write ./src || exit 0
 npx biome lint --write ./src || exit 0
-npx biome fix --write ./src || exit 0
 
 echo "Biome processing completed"
 

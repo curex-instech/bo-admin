@@ -1,4 +1,4 @@
-import * as React from 'react';
+import type * as React from 'react';
 import { Link } from '@mymind/banh-mi';
 import { FluidPage, FluidContent } from '../_shared/components/PageContent';
 

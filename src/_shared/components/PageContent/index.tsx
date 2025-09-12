@@ -1,4 +1,4 @@
-import * as React from 'react';
+import type * as React from 'react';
 import cx from 'classnames';
 import { Layout } from 'antd';
 import s from './s.module.scss';
