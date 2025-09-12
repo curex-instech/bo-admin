@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true $(git diff --cached --name-only --diff-filter=ACMR "*.ts" "*.tsx" "*.js" "*.json")

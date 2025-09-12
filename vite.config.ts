@@ -1,15 +1,11 @@
 import { mergeWithDefaultConfig } from '@mymind/duc-banh-mi';
 import { defineConfig } from 'vite';
 
-import dotenv from 'dotenv';
-dotenv.config();
-
 export default defineConfig(
   mergeWithDefaultConfig({
     preview: {
       port: 3000,
     },
-
 
     /**
      * @see https://vitejs.dev/config/server-options.html

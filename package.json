@@ -10,15 +10,11 @@
     "preview": "vite preview",
     "build:analyze": "echo TODO",
     "lint": "biome lint ./src",
-    "format": "biome format ./src --write"
+    "format": "biome format ./src --write",
+    "prepare": "husky install"
   },
   "banhMi": {
     "publicPath": "/"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true $(git diff --cached --name-only --diff-filter=ACMR \"*.ts\" \"*.tsx\" \"*.js\" \"*.json\")"
-    }
   },
   "license": "ISC",
   "dependencies": {
@@ -35,7 +31,6 @@
     "@types/crypto-js": "^4.2.2",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
-    "dotenv": "^16.0.1",
     "@biomejs/biome": "2.1.3",
     "husky": "^7.0.4",
     "sass": "^1.54.4",
