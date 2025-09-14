@@ -1,4 +1,4 @@
-import { encryptData, decryptData, encryptKey } from './encryption';
+import { decryptData, encryptData, encryptKey } from './encryption';
 
 export const setEncryptedItem = (key: any, value: any) => {
   const encryptedKey = encryptKey(key) as string;

@@ -6,9 +6,7 @@
     "formatWithErrors": true
   },
   "files": {
-    "includes": [
-      "src/**"
-    ]
+    "includes": ["src/**"]
   },
   "javascript": {
     "formatter": {

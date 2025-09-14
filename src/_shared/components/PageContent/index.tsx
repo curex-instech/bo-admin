@@ -1,6 +1,6 @@
-import type * as React from 'react';
-import cx from 'classnames';
 import { Layout } from 'antd';
+import cx from 'classnames';
+import type * as React from 'react';
 import s from './s.module.scss';
 
 type Content = {

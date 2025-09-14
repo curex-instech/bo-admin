@@ -35,7 +35,5 @@ pnpm start:no-typecheck
 
 
 ### Development
-#### To add new `/achivements` page: 
+#### To add new `/achivements` page:
 - Create new `achivements` folder under `src`, it will auto render the component from `index.tsx` exported from `achivements` folder
-
-

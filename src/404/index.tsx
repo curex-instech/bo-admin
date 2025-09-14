@@ -1,6 +1,6 @@
-import type * as React from 'react';
 import { Link } from '@mymind/banh-mi';
-import { FluidPage, FluidContent } from '../_shared/components/PageContent';
+import type * as React from 'react';
+import { FluidContent, FluidPage } from '../_shared/components/PageContent';
 
 export const layout = 'fluid';
 

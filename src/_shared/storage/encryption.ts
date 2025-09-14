@@ -1,7 +1,7 @@
 import CryptoJS from 'crypto-js';
 import {
-  LOCAL_STORAGE_SECRET_KEY,
   LOCAL_STORAGE_IV_KEY,
+  LOCAL_STORAGE_SECRET_KEY,
 } from 'src/environment';
 
 const SECRET_KEY_FORMAT = CryptoJS.enc.Utf8.parse(LOCAL_STORAGE_SECRET_KEY); // 16, 24, or 32 characters long
