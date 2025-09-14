@@ -10,8 +10,7 @@
     "preview": "vite preview",
     "build:analyze": "echo TODO",
     "lint": "biome lint ./src",
-    "format": "biome format ./src --write",
-    "prepare": "husky install"
+    "format": "biome format ./src --write"
   },
   "banhMi": {
     "publicPath": "/"
