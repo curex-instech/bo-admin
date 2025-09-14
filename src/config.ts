@@ -1,6 +1,5 @@
 import type { SiteConfig } from '@mymind/banh-mi';
-
-import { API_SERVER } from './environment';
+import { fallbackOAuthConfig } from './_shared/auth/fallback';
 
 const siteConfig: SiteConfig = {
   siteName: 'BO Web Admin',
@@ -10,7 +9,7 @@ const siteConfig: SiteConfig = {
   // sideNavWidgetId: 'widget-customized-sidenav',
 
   /** You can define an app level wrapper for things alike Redux provider, global listeners, etc */
-  // wrapperId: 'widget-app-wrapper'
+  wrapperId: 'widget-app-wrapper',
   topNav: [
     {
       type: 'profile',
@@ -51,11 +50,12 @@ const siteConfig: SiteConfig = {
     },
   ],
   authentication: {
-    pathPrefix: API_SERVER,
-    endpoints: {
-      getLoginInfoEndpoint: '/api/v1/auth/login',
-      logoutEndpoint: '/api/v1/auth/logout',
-    },
+    // pathPrefix: API_SERVER,
+    // endpoints: {
+    //   getLoginInfoEndpoint: '/api/v1/auth/login',
+    //   logoutEndpoint: '/api/v1/auth/logout',
+    // },
+    fallbackFunctions: fallbackOAuthConfig.fallbackFunctions,
   },
 };
 

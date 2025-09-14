@@ -21,3 +21,5 @@ export const LOCAL_STORAGE_SECRET_KEY = import.meta.env
   .VITE_SECURE_LOCAL_STORAGE_HASH_KEY;
 export const LOCAL_STORAGE_IV_KEY = import.meta.env
   .VITE_SECURE_LOCAL_STORAGE_IV_KEY;
+
+export const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
