@@ -1,5 +1,6 @@
 import type { UserLoginInfo } from '@mymind/banh-mi';
 import { STORAGE_KEYS } from '../constants';
+import { request } from '../request';
 import { getEncryptedItem, removeEncryptedItem } from '../storage';
 
 export const fallbackOAuthConfig = {
@@ -14,23 +15,21 @@ export const fallbackOAuthConfig = {
 
     getLoginInfoFallback: async (): Promise<UserLoginInfo | null> => {
       const data = getEncryptedItem(STORAGE_KEYS.USER_INFO);
-      console.log('data', data);
       return data;
     },
 
     goLoginFallback: async (returnUrl?: string): Promise<void> => {},
 
     goLogoutFallback: async (): Promise<void> => {
-      // try {
-      //   // Optional: notify backend about logout
-      //   await request.post('/api/auth/logout');
-      // } catch (error) {
-      //   console.warn('Backend logout failed:', error);
-      // }
-      // Clear local storage
-      removeEncryptedItem(STORAGE_KEYS.USER_INFO);
-      // Redirect to home
-      window.location.href = '/';
+      try {
+        await request.post('/api/auth/logout/');
+        // Clear local storage
+        removeEncryptedItem(STORAGE_KEYS.USER_INFO);
+        // Redirect to home
+        window.location.href = '/';
+      } catch (error) {
+        console.warn('Backend logout failed:', error);
+      }
     },
   },
 };

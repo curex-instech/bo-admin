@@ -1,6 +1,6 @@
 import { Link } from '@mymind/banh-mi';
 import type * as React from 'react';
-import { FluidContent, FluidPage } from '../_shared/components/PageContent';
+import { CardContent, FluidPage } from '../_shared/components/PageContent';
 
 export const layout = 'fluid';
 
@@ -14,12 +14,12 @@ const Page404: React.ComponentType<{ error?: string }> = ({
   }
   return (
     <FluidPage>
-      <FluidContent>
+      <CardContent>
         <h1>Not found</h1>
         <p>
           <Link routeId="/">back to home</Link>
         </p>
-      </FluidContent>
+      </CardContent>
     </FluidPage>
   );
 };

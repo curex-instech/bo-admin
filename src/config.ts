@@ -24,37 +24,79 @@ const siteConfig: SiteConfig = {
       type: 'link',
     },
     {
-      title: 'User',
-      iconType: 'user',
+      title: 'Agents',
       type: 'folder',
       items: [
         {
-          title: 'List',
-          routeId: '/user/list',
+          title: 'Sales',
+          routeId: '/agents/sales',
           type: 'link',
-          routeParams: {
-            userType: 'user',
-          },
-          match: ['userType'],
+          iconType: 'User',
         },
         {
-          title: 'Create',
-          routeId: '/user/create',
+          title: 'Customers',
+          routeId: '/agents/customers',
           type: 'link',
-          routeParams: {
-            userType: 'user',
-          },
-          match: ['userType'],
+          iconType: 'UsergroupAdd',
         },
       ],
     },
+    {
+      title: 'Staff',
+      type: 'folder',
+      items: [
+        {
+          title: 'Users',
+          routeId: '/staff/users',
+          type: 'link',
+          iconType: 'User',
+        },
+        {
+          title: 'Roles',
+          routeId: '/staff/roles',
+          type: 'link',
+          iconType: 'FolderAdd',
+        },
+        {
+          title: 'Permissions',
+          routeId: '/staff/permissions',
+          type: 'link',
+          iconType: 'Setting',
+        },
+      ],
+    },
+    // {
+    //   title: 'User',
+    //   iconType: 'user',
+    //   type: 'folder',
+    //   items: [
+    //     {
+    //       title: 'List',
+    //       routeId: '/user/list',
+    //       type: 'link',
+    //       routeParams: {
+    //         userType: 'user',
+    //       },
+    //       match: ['userType'],
+    //     },
+    //     {
+    //       title: 'Create',
+    //       routeId: '/user/create',
+    //       type: 'link',
+    //       routeParams: {
+    //         userType: 'user',
+    //       },
+    //       match: ['userType'],
+    //     },
+    //   ],
+    // },
   ],
   authentication: {
     // pathPrefix: API_SERVER,
-    // endpoints: {
-    //   getLoginInfoEndpoint: '/api/v1/auth/login',
-    //   logoutEndpoint: '/api/v1/auth/logout',
-    // },
+    endpoints: {
+      //   getLoginInfoEndpoint: '/api/v1/auth/login',
+      // logoutEndpoint: '/api/auth/logout/',
+    },
     fallbackFunctions: fallbackOAuthConfig.fallbackFunctions,
   },
 };

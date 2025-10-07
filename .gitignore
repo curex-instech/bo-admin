@@ -5,6 +5,11 @@
 # env
 node_modules
 .env
+.env.local
+.env.development
+.env.uat
+.env.staging
+.env.production
 
 # log
 *.log
