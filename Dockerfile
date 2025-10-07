@@ -17,9 +17,11 @@ COPY . .
 
 # Build-time variable (you pass this via --build-arg)
 ARG VITE_API_SERVER
+ARG VITE_GOOGLE_CLIENT_ID
 
 # Expose it to the build environment (so Vite can read it)
 ENV VITE_API_SERVER=${VITE_API_SERVER}
+ENV VITE_GOOGLE_CLIENT_ID=${VITE_GOOGLE_CLIENT_ID}
 
 # Hardcoded
 ENV VITE_SECURE_LOCAL_STORAGE_HASH_KEY=GB123balA
