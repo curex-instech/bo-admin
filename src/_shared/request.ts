@@ -1,22 +1,14 @@
-import axios, { type InternalAxiosRequestConfig } from 'axios';
-import { API_SERVER } from 'src/environment';
+import axios from 'axios';
 import { STORAGE_KEYS } from './constants';
-import { getEncryptedItem, removeEncryptedItem } from './storage';
+import { removeEncryptedItem } from './storage';
 
 export const request = axios.create({
-  baseURL: API_SERVER,
-  // withCredentials: true,
+  withCredentials: true,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
-request.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-  const token = getEncryptedItem('token');
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
-  }
-  return config;
-});
-
-// TODO: add response interceptor
 request.interceptors.response.use(
   (response) => {
     return response;
@@ -24,7 +16,7 @@ request.interceptors.response.use(
   (error) => {
     if (error.response.status === 401) {
       removeEncryptedItem(STORAGE_KEYS.USER_INFO);
-      window.location.href = '/login-fallback';
+      window.location.href = '/';
     }
     return Promise.reject(error);
   },

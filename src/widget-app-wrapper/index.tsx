@@ -1,5 +1,6 @@
 import { useUser } from '@mymind/banh-mi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ConfigProvider } from 'antd';
 import type { ReactNode } from 'react';
 import LoginPage from './login';
 import GoogleAuthWrapper from './providers/auth';
@@ -24,7 +25,19 @@ export default function WidgetAppWrapper({
 
   if (loginInfo) {
     return (
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <ConfigProvider
+          theme={{
+            components: {
+              Modal: {
+                wireframe: true,
+              },
+            },
+          }}
+        >
+          {children}
+        </ConfigProvider>
+      </QueryClientProvider>
     );
   }
   return (
