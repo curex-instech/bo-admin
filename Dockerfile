@@ -31,10 +31,7 @@ ENV VITE_SECURE_LOCAL_STORAGE_IV_KEY=CE9928881hB
 RUN pnpm run build
 
 # ---- Serve stage ----
-FROM nginx:stable-alpine AS production
-
-# Copy built assets
-COPY --from=build /app/dist /usr/share/nginx/html
-
-EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+FROM nginxinc/nginx-unprivileged:stable AS production
+WORKDIR /usr/share/nginx/html
+COPY --chown=nginx:nginx --from=build /app/dist /usr/share/nginx/html
+COPY --chown=nginx:nginx nginx.conf.template /etc/nginx/templates/
