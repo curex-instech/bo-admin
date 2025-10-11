@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { type AxiosError } from 'axios';
 import { STORAGE_KEYS } from './constants';
 import { removeEncryptedItem } from './storage';
 
@@ -13,10 +13,14 @@ request.interceptors.response.use(
   (response) => {
     return response;
   },
-  (error) => {
-    if (error.response.status === 401) {
+  (error: AxiosError) => {
+    const requestUrl = error?.config?.url;
+    console.log('requestUrl', requestUrl);
+    if (error?.response?.status === 401) {
       removeEncryptedItem(STORAGE_KEYS.USER_INFO);
-      window.location.href = '/';
+      if (requestUrl !== '/api/auth/login/') {
+        window.location.href = '/';
+      }
     }
     return Promise.reject(error);
   },
